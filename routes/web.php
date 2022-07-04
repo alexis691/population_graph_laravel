@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PopulationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +20,8 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+//Route to see the graph whit population data
+Route::get('/populationData', [PopulationController::class, 'populationData'])->middleware(['auth'])->name('populationData');
 
 require __DIR__.'/auth.php';
