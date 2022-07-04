@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Population data from (DATA BASE)') }}
+            {{ __('Population data from (REST API)') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h1 class="text-center text-xl">In this graph you can see all the changes in the population that have occurred in the last few years.</h1><br>
+                <h1 class="text-center text-xl">In this graph you can see all the changes in the population that have occurred in the last few years.</h1><br>
                     <canvas id="myChart" height="100px"></canvas>
                 </div>                
             </div>
@@ -22,18 +22,18 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table w-full border-separate lg:border-collapse table-fixed">
                         <thead>
-                            <tr class="bg-gradient-to-r from-cyan-500 to-blue-500 ... text-white">
+                            <tr class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... text-white">
                                 <th class="w-1/2 p-4">Years</th>
                                 <th class="w-1/2 p-4">Population</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($table as $val)
+                            @foreach($populationData as $val)
                                 <tr>
-                                    <td class="border border-slate-300 ... p-2 text-center">{{ $val['year']}}</td>
-                                    <td class="border border-slate-300 ... p-2 text-center">{{ number_format($val['population'], 0) }}</td>
+                                    <td class="border border-slate-300 ... p-2 text-center">{{ $val['Year']}}</td>
+                                    <td class="border border-slate-300 ... p-2 text-center">{{ number_format($val['Population'], 0) }}</td>
                                 </tr>
-                            @endforeach                        
+                            @endforeach                          
                         </tbody>
                     </table>
                 </div>                
@@ -55,8 +55,8 @@
         labels: years,
         datasets: [{
           label: 'Population',
-          backgroundColor: 'rgb(16, 81, 255)',
-          borderColor: 'rgb(16, 81, 255)',
+          backgroundColor: 'rgb(254, 48, 142)',
+          borderColor: 'rgb(254, 48, 142)',
           data: population,
         }]
       };

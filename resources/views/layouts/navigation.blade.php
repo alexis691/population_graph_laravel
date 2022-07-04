@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('populationData')" :active="request()->routeIs('populationData')">
                         {{ __('Population Data') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('fromApi')" :active="request()->routeIs('fromApi')">
+                        {{ __('Data From Api') }}
+                    </x-nav-link>
                 </div>
             </div>
 

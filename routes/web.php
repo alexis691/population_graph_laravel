@@ -21,7 +21,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-//Route to see the graph whit population data
+//Route to see the graph whit population data from DB
 Route::get('/populationData', [PopulationController::class, 'populationData'])->middleware(['auth'])->name('populationData');
+
+//Route to see the graph whit population data from REST API
+Route::get('/fromApi', [PopulationController::class, 'fromApi'])->middleware(['auth'])->name('fromApi');
 
 require __DIR__.'/auth.php';
