@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Population data from (REST API)') }}
+            {{ __('Population data directly from (REST API)') }}
         </h2>
     </x-slot>
 
