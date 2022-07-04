@@ -14,6 +14,8 @@ class PopulationController extends Controller
         //Query to get all population data from population table
         $populationData = Population::all();
 
+        $years = array(); $population = array(); $table = array();  //array declaration
+
         //Go through data obtained from DB and insert it into arrays
         foreach($populationData as $value){
             $years[] = $value['year'];
